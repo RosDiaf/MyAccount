@@ -1,0 +1,69 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+/* CANDY THEME --- */
+$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+// The warn palette is optional (defaults to red).
+$candy-app-warn:    mat-palette($mat-red);
+// Create the theme object (a Sass map containing all of the palettes).
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+.candy-theme { 
+    @include angular-material-theme($candy-app-theme);
+}
+
+
+/* RED THEME --- */
+$red-app-primary: mat-palette($mat-red, 500, 700, 800);
+$red-app-accent:  mat-palette($mat-light-blue, A200);
+$red-app-warn:    mat-palette($mat-red);
+$red-app-theme: mat-light-theme($red-app-primary, $red-app-accent, $red-app-warn);
+.red-theme { 
+    @include angular-material-theme($red-app-theme);
+}
+
+
+/* BLUE THEME --- */
+$blue-app-primary: mat-palette($mat-blue, 500, 700, 800);
+$blue-app-accent:  mat-palette($mat-blue, A200);
+$blue-app-warn:    mat-palette($mat-blue);
+$blue-app-theme: mat-light-theme($blue-app-primary, $blue-app-accent, $blue-app-warn);
+.blue-theme { 
+    @include angular-material-theme($blue-app-theme);
+}
+
+
+/* TEAL THEME --- */
+$teal-app-primary: mat-palette($mat-teal, 500, 700, 800);
+$teal-app-accent:  mat-palette($mat-teal, A200);
+$teal-app-warn:    mat-palette($mat-teal);
+$teal-app-theme: mat-light-theme($teal-app-primary, $teal-app-accent, $teal-app-warn);
+.teal-theme { 
+    @include angular-material-theme($teal-app-theme);
+}
+
+/* GREEN THEME --- */
+$green-app-primary: mat-palette($mat-green, 500, 700, 800);
+$green-app-accent:  mat-palette($mat-green, A200);
+$green-app-warn:    mat-palette($mat-green);
+$green-app-theme: mat-light-theme($green-app-primary, $green-app-accent, $green-app-warn);
+.green-theme { 
+    @include angular-material-theme($green-app-theme);
+}
+
+/* YELLOW THEME --- */
+$yellow-app-primary: mat-palette($mat-yellow, 500, 700, 800);
+$yellow-app-accent:  mat-palette($mat-yellow, A200);
+$yellow-app-warn:    mat-palette($mat-yellow);
+$yellow-app-theme: mat-light-theme($yellow-app-primary, $yellow-app-accent, $yellow-app-warn);
+.yellow-theme { 
+    @include angular-material-theme($yellow-app-theme);
+}

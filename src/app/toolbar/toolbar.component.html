@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="menuOpen()">
+        <mat-icon>menu</mat-icon>
+    </button> <span id="app-title">{{ title }}</span>
+    <span class="example-spacer"></span>
+    <!--<button id="btn-toggle" mat-button (click)="isDarkTheme = !isDarkTheme; setDarkTheme()">{{cmsDataContent?.cmsData.sideNav.toggleTheme}}</button>-->
+    <button id="btn-toggle" mat-button [mat-menu-trigger-for]="menu">{{cmsDataContent?.cmsData.sideNav.toggleTheme}}</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="changeTheme('')">Default</button>
+      <button mat-menu-item (click)="changeTheme('candy-theme')">Candy</button>
+      <button mat-menu-item (click)="changeTheme('red-theme')">Red</button>
+      <button mat-menu-item (click)="changeTheme('blue-theme')">Blue</button>
+      <button mat-menu-item (click)="changeTheme('teal-theme')">Teal</button>
+      <button mat-menu-item (click)="changeTheme('green-theme')">Green</button>
+      <button mat-menu-item (click)="changeTheme('yellow-theme')">Yellow</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>

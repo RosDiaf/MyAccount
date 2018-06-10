@@ -1,0 +1,29 @@
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <div *ngFor="let contracts of portfolioSummaryData?.PortfolioSummary.contracts; let i = index">
+        <div  class="row" *ngIf="this.contractId === contracts.id">
+          <div class="col-md-6">
+            <h1>Savings</h1>
+            <p>Product Group Type Description: {{contracts?.productGroupTypeDescription}}</p>
+            <p>Product Area Type Description: {{contracts?.productAreaTypeDescription}}</p>
+            <p>{{cmsData?.cmsData.myAccount.contractDescription}}: {{contracts?.description}}</p>
+            <p>Valuation Class: {{contracts?.valuationClass}}</p>
+          </div>
+          <div class="col-md-6">
+            <h2>{{contracts?.valuationAmount}}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+            <ul>
+              <li>Overview</li>
+              <li>Transactions</li>
+              <li>Documents</li>
+            </ul>
+          </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

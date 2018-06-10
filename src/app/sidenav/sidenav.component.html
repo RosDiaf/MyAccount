@@ -1,0 +1,19 @@
+<mat-sidenav #menu id="menu">
+  <mat-list role="list" class="nav-list">
+    <a mat-list-item routerLink="/my-account" (click)="menu.close()">
+        <i class="material-icons">account_box</i> <span id="nav-myaccount">{{cmsDataContent?.cmsData.sideNav.myAccount}}</span></a>
+    <a mat-list-item routerLink="/popular" (click)="menu.close()">
+        <i class="material-icons">monetization_on</i> {{cmsDataContent?.cmsData.sideNav.myProducts}}</a>
+    <a mat-list-item routerLink="/my-details" (click)="menu.close()">
+        <i class="material-icons">face</i> {{cmsDataContent?.cmsData.sideNav.myDetails}}</a>
+    <a mat-list-item routerLink="/mailbox" (click)="menu.close()">
+        <i class="material-icons">email</i> {{cmsDataContent?.cmsData.sideNav.mailbox}}</a>
+    <a mat-list-item routerLink="/support" (click)="menu.close()">
+        <i class="material-icons">help_outline</i> {{cmsDataContent?.cmsData.sideNav.support}}</a>
+    <a mat-list-item routerLink="/contacts" (click)="menu.close()">
+        <i class="material-icons">contact_phone</i> {{cmsDataContent?.cmsData.sideNav.contacts}}</a>
+  </mat-list>
+  <button mat-button (click)="menu.close()" id="btn-close">
+        <i class="material-icons">close</i> {{cmsDataContent?.cmsData.sideNav.close}}</button>
+</mat-sidenav>
+<app-toolbar (darkTheme)="setDarkTheme($event)" (openMenu)="openMenu()"></app-toolbar>

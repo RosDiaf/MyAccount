@@ -1,0 +1,13 @@
+<mat-list role="list">
+  <a md-list-item *ngFor="let contact of contacts">
+    <h4>{{contact.name}}</h4>
+    <p> {{contact.number}} </p>
+    <button mat-icon-button (click)="delete(contact)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </a>
+</mat-list>
+
+<button class="add-contact-fab" (click)="add()">
+  <mat-icon>add</mat-icon>
+</button>

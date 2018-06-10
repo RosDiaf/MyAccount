@@ -1,0 +1,49 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+          <h1 class="header" id="customer-name">{{customerProfileData?.customerData.personalDetails.title}} {{customerProfileData?.customerData.personalDetails.forename}} {{customerProfileData?.customerData.personalDetails.surname}}</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><span class="strong">{{cmsData?.cmsData.myAccount.workEmailLabel}}</span> <span id="work-email">{{customerProfileData?.customerData.contactDetails.emailAddresses.work}}</span></p>
+      <p><span class="strong">{{cmsData?.cmsData.myAccount.personalEmailLabel}}</span> <span id="personal-email">{{customerProfileData?.customerData.contactDetails.emailAddresses.personal}}</span></p>
+      <p><span class="strong">{{cmsData?.cmsData.myAccount.addressLabel}}</span>
+        <span id="postal-address">
+          {{customerProfileData?.customerData.contactDetails.postalAddress.line1}}
+          {{customerProfileData?.customerData.contactDetails.postalAddress.line2}}
+          {{customerProfileData?.customerData.contactDetails.postalAddress.line3}}
+          {{customerProfileData?.customerData.contactDetails.postalAddress.line4}}
+          {{customerProfileData?.customerData.contactDetails.postalAddress.postcode}}</span></p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="accent" routerLink="/my-details" id="view-details">
+          {{cmsData?.cmsData.myAccount.viewDetailsButtonLabel}}
+        </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h2 class="h2header">{{cmsData?.cmsData.myAccount.portfolioLabel}}</h2>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div id="contract-list">
+          <div class="contract-item grey-box" *ngFor="let contracts of portfolioSummaryData?.PortfolioSummary.contracts; let i = index">
+            <div class="row">
+              <div class="col-md-6">
+                <span class="type"><span class="strong">{{cmsData?.cmsData.myAccount.productGroupTypeDescription}}:</span>{{contracts.productGroupTypeDescription}}</span>
+                <p><span class="strong">{{cmsData?.cmsData.myAccount.contractDescription}}:</span> {{contracts.description}}</p>
+                <p><span class="strong">{{cmsData?.cmsData.myAccount.contractAmount}}: </span>{{contracts.valuationAmount}}</p>
+              </div>
+              <div class="col-md-6 btn-view">
+                <button mat-raised-button color="accent" routerLink="/contract-details" [queryParams]="{ contractId: contracts.id }">{{cmsData?.cmsData.myAccount.contractButtonLabel}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+  </mat-card>
+</div>
